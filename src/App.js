@@ -1,26 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Display from "./Display";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+	state = {
+		counter: 0,
+		isMaxValue: false,
+	};
+
+	onClickUp = () => {
+
+		let isMaxValue = this.state.counter >= 4;
+
+		this.setState({
+				counter: this.state.counter === 5 ? this.state.counter : this.state.counter + 1,
+				isMaxValue: isMaxValue,
+			}
+		)
+	};
+
+	onClickReset = () => {
+		this.setState({
+				counter: 0,
+				isMaxValue: false,
+			}
+		)
+	};
+
+
+	render() {
+		return (
+			<div className="App">
+				<header className="App-header">
+					<div className="box">
+
+						<Display state={this.state}/>
+
+						<div className="boxButton">
+							<div className="button">
+								<button onClick={this.onClickUp}>Add</button>
+								<button onClick={this.onClickReset}>Reset</button>
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
+		)
+	}
 }
+
 
 export default App;

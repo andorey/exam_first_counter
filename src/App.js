@@ -15,15 +15,14 @@ class App extends React.Component {
 
 	onClickUp = () => {
 
-		this.state.counter < this.state.maxCounter ?
-			this.setState({ counter: this.state.counter + 1}) :
-			this.setState({isDisable: true})
+		if (this.state.counter < this.state.maxCounter){
+			this.setState({ counter: this.state.counter + 1}
+			)}
 	};
 
 	onClickReset = () => {
 		this.setState({
 				counter: 0,
-				isDisable: false
 			}
 		)
 	};
@@ -41,7 +40,7 @@ class App extends React.Component {
 							<div className="button">
 								{this.state.buttons.map( element =>
 									<Buttons buttonsName={ element }
-											 isDisable={this.state.isDisable}
+											 state={this.state}
 											 onClickUp={this.onClickUp}
 											 onClickReset={this.onClickReset}/>
 								)}

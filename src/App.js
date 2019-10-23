@@ -21,7 +21,7 @@ class App extends React.Component {
 		)
 	};
 
-	onClickReset = () => {
+	clickReset = () => {
 		this.setState({
 				counter: 0,
 				isMaxValue: false,
@@ -41,7 +41,7 @@ class App extends React.Component {
 						<div className="boxButton">
 							<div className="button">
 								<button onClick={this.onClickUp}>Add</button>
-								<button onClick={this.onClickReset}>Reset</button>
+								<button onClick={this.clickReset}>Reset</button>
 							</div>
 						</div>
 					</div>

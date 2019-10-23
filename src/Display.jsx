@@ -1,14 +1,12 @@
 import React from 'react';
-
+import './App.css';
 
 class Display extends React.Component {
 
 	render() {
 
-	let displayClass = this.props.state.isMaxValue ? 'display maxValueClass' : 'display';
-
 		return (
-			<div className={displayClass}>
+			<div className={this.props.state.isMaxValue}>
 				{this.props.state.counter}
 			</div>
 		)

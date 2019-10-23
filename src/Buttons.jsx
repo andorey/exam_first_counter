@@ -7,12 +7,10 @@ class Buttons extends React.Component {
 	render() {
 
 		return (
-			<div className="boxButton">
-				<div className="button">
-					<button onClick={this.onClickUp}>Add</button>
-					<button onClick={this.clickReset}>Reset</button>
-				</div>
-			</div>
+			<button onClick={this.props.btnsName === 'inc' ? this.props.onClickUp :
+			this.props.onClickReset} disabled={this.props.btnsName === 'inc' ?  this.props.isDisable : false}>
+				{this.props.btnsName}
+			</button>
 		)
 	}
 }

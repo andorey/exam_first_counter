@@ -8,24 +8,21 @@ class App extends React.Component {
 
 	state = {
 		counter: 0,
-		maxCounter: 4,
+		maxCounter: 5,
 		buttons: ['inc', 'rst'],
-		isMaxValue: 'display',
 		isDisable: false
 	};
 
 	onClickUp = () => {
 
-		this.state.counter <= this.state.maxCounter ?
+		this.state.counter < this.state.maxCounter ?
 			this.setState({ counter: this.state.counter + 1}) :
-			this.setState({isMaxValue: this.state.isMaxValue + ' maxValueClass',
-			isDisable: true})
+			this.setState({isDisable: true})
 	};
 
 	onClickReset = () => {
 		this.setState({
 				counter: 0,
-				isMaxValue: 'display',
 				isDisable: false
 			}
 		)
@@ -42,8 +39,8 @@ class App extends React.Component {
 
 						<div className="boxButton">
 							<div className="button">
-								{this.state.buttons.map(el =>
-									<Buttons btnsName={ el }
+								{this.state.buttons.map( element =>
+									<Buttons buttonsName={ element }
 											 isDisable={this.state.isDisable}
 											 onClickUp={this.onClickUp}
 											 onClickReset={this.onClickReset}/>

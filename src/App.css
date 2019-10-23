@@ -69,4 +69,13 @@
 .maxValueClass {
   color: red;
   text-shadow: 0 0 19px white;
+  height: 200px;
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 5px solid #09d399;
+  background-color: #09d3ac;
+  font-size: 150px;
+  text-align-all: center;
+  border-radius: 10px;
 }

@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
 
-class Display extends React.Component {
-
-	render() {
+const Display = (props) => {
 
 		return (
-			<div className={this.props.state.counter < this.props.state.maxCounter ? 'display': 'maxValueClass'}>
-				{this.props.state.counter}
+			<div
+				className={props.state.counter < props.state.maxCounter ? 'display' : 'maxValueClass'}>
+				<div>
+					{props.state.counter}
+				</div>
+
 			</div>
 		)
-	}
-}
+	};
 
 
 export default Display;

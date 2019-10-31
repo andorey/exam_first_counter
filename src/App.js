@@ -9,9 +9,10 @@ class App extends React.Component {
 	state = {
 		counter: 0,
 		maxCounter: 5,
-		buttons: ['inc', 'rst'],
 		isDisable: false
 	};
+
+	buttons = ['inc', 'rst'];
 
 	onClickUp = () => {
 
@@ -38,7 +39,7 @@ class App extends React.Component {
 
 						<div className="boxButton">
 							<div className="button">
-								{this.state.buttons.map( element =>
+								{this.buttons.map( element =>
 									<Buttons buttonsName={ element }
 											 state={this.state}
 											 onClickUp={this.onClickUp}
